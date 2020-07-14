@@ -1,0 +1,32 @@
+.new-tweet {
+  background-color: f1efed;
+  width: 100%;
+}
+.new-tweet div {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  font-family: Bungee;
+  color: grey;
+}
+
+label[for="tweet-text"] {
+  color: grey;
+}
+
+button[type='submit'] {
+  background-color: #4056A1;
+}
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+textarea[name='text'] {
+  background-color: transparent;
+  border: none;
+  border-bottom: 3px solid gray;
+}
+.counter {
+
+}
