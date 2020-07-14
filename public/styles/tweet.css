@@ -6,6 +6,12 @@
   background-color:  #f4f1ec;
 }
 
+.tweet :hover {
+  color: black;
+  box-shadow: 10px 10px grey;
+}
+
+
 .tweet header {
   height: 130px;
   width: 100%;
