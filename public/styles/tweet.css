@@ -5,13 +5,14 @@
   flex-direction: column;
   background-color:  #f4f1ec;
 }
-
-.tweet :hover {
-  color: black;
+.tweet:hover {
+  color: #302e2b;
   box-shadow: 10px 10px grey;
 }
 
-
+.nickname {
+  display: none;
+}
 .tweet header {
   height: 130px;
   width: 100%;
@@ -23,20 +24,16 @@
 .tweet header div {
   display: flex;
 }
+
 .tweet header div img {
   width: 100px;
   padding-right: 10px;
 }
-.tweet body {
-  border-bottom: 4px solid gray;
-}
-
 .tweet footer {
   height: 80px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   border-top: 4px solid gray;
-
 }
 
