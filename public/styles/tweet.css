@@ -1,17 +1,21 @@
 .tweet {
   padding: 10px;
   border: 4px solid grey;
+  margin: 50px;
   display: flex;
   flex-direction: column;
   background-color:  #f4f1ec;
+  width: 100%;
 }
 .tweet:hover {
   color: #302e2b;
   box-shadow: 10px 10px grey;
 }
-
-.nickname {
-  display: none;
+.tweet:hover .handle{
+  color: #545149;
+}
+.handle {
+  color: transparent;
 }
 .tweet header {
   height: 130px;

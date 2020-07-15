@@ -59,8 +59,8 @@ $(document).ready(() => {
         <br>
         <h4>${data.user.name}</h4>
       </div>
-      <div>
-        <h4></h4>>${data.user.handle}</h4>
+      <div class ="handle">
+        <h4>${data.user.handle}</h4>
       </div>
     </header>
     <section>
