@@ -124,4 +124,9 @@ renderTweets(data);
   }
 
   loadtweets()
+  $('.create-tweet').click((event) => {
+    // $('.new-tweet').css('border', '3px');
+    // $('.new-tweet').slideDown(1000);
+    $('.new-tweet').toggle("slow");
+  })
 })

@@ -3,10 +3,18 @@ nav {
   display: flex;
   height: 100px;
   width: 100%;
+  position: fixed;
+  top: 0;
   color: #ffffff;
   background-color: #4056A1;
+  justify-content: space-between;
 }
 
 .span {
   font-family: 'Bungee', cursive;
+}
+
+nav button {
+  background-color: #4056A1;
+  border: none;
 }
