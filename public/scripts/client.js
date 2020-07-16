@@ -44,18 +44,23 @@ const timeDif = function (time) {
     return `${Math.floor(hours)} hours ago`;
   }
 }
+const escape =  function(str) {
+  let div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+}
 
 $(document).ready(() => {
   const renderTweets = function(tweets) {
     for (const tweet of tweets) {
-      $('.container').append(createTweetElement(tweet));
+      $('.tweets-container').prepend(createTweetElement(tweet));
     }
   };
   const createTweetElement = function(data) {
     const $tweet = `<article class="tweet">
     <header>
       <div>
-        <img src="${data.user.avatars}">
+        <img src="${(data.user.avatars)}">
         <br>
         <h4>${data.user.name}</h4>
       </div>
@@ -64,7 +69,7 @@ $(document).ready(() => {
       </div>
     </header>
     <section>
-    <p>${data.content.text}</p>
+    <p>${escape(data.content.text)}</p>
     </section>
     <footer>
       <div>

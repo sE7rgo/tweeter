@@ -39,7 +39,7 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
-        <form action="/tweets/" method="POST">
+        <form>
           <label for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="tweet-text"></textarea>
           <div>
@@ -48,29 +48,8 @@
           </div>
         </form>
       </section>
-      <article class="tweet">
-        <header>
-          <div>
-            <img src="/images/horse.png">
-            <br>
-            <h4>Horse</h4>
-          </div>
-          <div class="handle">
-            <h4>@alco</h4>
-          </div>
-        </header>
-        <section class="content">
-          One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. 
-        </section>
-        <footer>
-          <div class="time">
-            <h6>6 horse ago</h6>
-          </div>
-          <div>
-            🍺☺️👾 🤖
-          </div>
-        </footer>
-      </article>
+      <section class="tweets-container">
+      </section>
     </main>
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
   </body>
