@@ -1,6 +1,8 @@
 .new-tweet {
   background-color: f1efed;
   width: 100%;
+  padding-bottom: 40px;
+  padding-top: 40px;
 }
 .new-tweet div {
   margin-top: 20px;
@@ -10,11 +12,11 @@
   color: grey;
 }
 
-label[for="tweet-text"] {
+label[for = "tweet-text"] {
   color: grey;
 }
 
-button[type='submit'] {
+button[type = 'submit'] {
   background-color: #4056A1;
 }
 form {
@@ -22,11 +24,18 @@ form {
   flex-direction: column;
 }
 
-textarea[name='text'] {
+textarea[name = 'text'] {
   background-color: transparent;
   border: none;
-  border-bottom: 3px solid gray;
+  border-bottom: 4px solid gray;
 }
-.counter {
+
+.error {
+  display: none;
+  border: none;
+  color: #873242;
+  background-color: transparent;
+  text-align: center;
+  padding: 15px;
 
 }

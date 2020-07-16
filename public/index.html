@@ -26,6 +26,7 @@
     <!-- Top nav bar (fixed) -->
     <nav>
       <span class="span">tweeter</span>
+      <button type="button"><b>Write</b> a new tweet</button>
     </nav>
     <header>
       <div>
@@ -40,6 +41,9 @@
     <main class="container">
       <section class="new-tweet">
         <form>
+          <label for="error">
+            <p class="error"></p>
+          </label>
           <label for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="tweet-text"></textarea>
           <div>

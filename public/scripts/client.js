@@ -36,9 +36,9 @@ const timeDif = function (time) {
   const hours = min / 60;
   const days = hours / 24;
   const years = days / 365;
-  if (years > 0) {
+  if (years !== 0) {
     return `${Math.floor(years)} years ago`;
-  } else if (years < 0 && days > 0) {
+  } else if (years < 0) {
     return `${Math.floor(days)} days ago`;
   } else {
     return `${Math.floor(hours)} hours ago`;
@@ -85,15 +85,20 @@ $(document).ready(() => {
 renderTweets(data);
 
   $('.new-tweet form').submit((event) => {
-    let text = $('#tweet-text').val()
+    let text = $('#tweet-text').val();
     let str = $('#tweet-text').serialize();
     event.preventDefault();
     if (text.length > 140) {
-      return alert('The text is tooo loooong')
+      $('.error').text(`❌ Look's like you are Tolstoy, try with 140 characters 😀`);
+      $('.error').css('border', '3px solid red');
+      $('.error').slideDown(1000);
     } else if (text === '') {
-      return alert('The text is tooo shooort')
+      $('.error').text(`❌ Look's like there is no text, are you shy? 😀`);
+      $('.error').css('border', '3px solid red');
+      $('.error').slideDown(1000);
     } else {
-      return $.ajax({
+      $('.error').slideUp(1000);
+      $.ajax({
         type: 'POST',
         url: "/tweets",
         data: str
