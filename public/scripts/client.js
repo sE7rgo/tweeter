@@ -33,56 +33,54 @@ const timeDif = function (time) {
   const diff = (Date.parse(new Date) - time)
   const sec = diff / 1000;
   const min = sec / 60;
-  const hours = min / 60;
-  const days = hours / 24;
-  const years = days / 365;
-  if (years !== 0) {
-    return `${Math.floor(years)} years ago`;
-  } else if (years < 0) {
-    return `${Math.floor(days)} days ago`;
-  } else {
-    return `${Math.floor(hours)} hours ago`;
+  const hours = (min / 60);
+  const days = Math.floor(hours / 24);
+  const years = Math.floor(days / 365);
+  if (years > 0) {
+    return `${years} years ago`;
+  } else if (days > 0) {
+    return `${days} days ago`;
   }
+  return `${Math.floor(hours)} hours ago`;
 }
 const escape =  function(str) {
   let div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
 }
-
-$(document).ready(() => {
-  const renderTweets = function(tweets) {
-    for (const tweet of tweets) {
-      $('.tweets-container').prepend(createTweetElement(tweet));
-    }
-  };
-  const createTweetElement = function(data) {
-    const $tweet = `<article class="tweet">
-    <header>
-      <div>
-        <img src="${(data.user.avatars)}">
-        <br>
-        <h4>${data.user.name}</h4>
-      </div>
-      <div class ="handle">
-        <h4>${data.user.handle}</h4>
-      </div>
-    </header>
-    <section>
-    <p>${escape(data.content.text)}</p>
-    </section>
-    <footer>
-      <div>
-        <h6>${timeDif(data.created_at)}</h6>
-      </div>
-      <div>
-        🍺☺️👾 🤖
-      </div>
-    </footer>
-  </article>`
-  return $tweet;
+const renderTweets = function(tweets) {
+  for (const tweet of tweets) {
+    $('.tweets-container').prepend(createTweetElement(tweet));
   }
+};
+const createTweetElement = function(data) {
+  const $tweet = `<article class="tweet">
+  <header>
+    <div>
+      <img src="${(data.user.avatars)}">
+      <br>
+      <h4>${data.user.name}</h4>
+    </div>
+    <div class ="handle">
+      <h4>${data.user.handle}</h4>
+    </div>
+  </header>
+  <section>
+  <p>${escape(data.content.text)}</p>
+  </section>
+  <footer>
+    <div>
+      <h6>${timeDif(data.created_at)}</h6>
+    </div>
+    <div>
+      🍺☺️👾 🤖
+    </div>
+  </footer>
+</article>`
+return $tweet;
+}
 renderTweets(data);
+$(document).ready(() => {
 
   $('.new-tweet form').submit((event) => {
     let text = $('#tweet-text').val();
