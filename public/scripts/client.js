@@ -80,26 +80,37 @@ $(document).ready(() => {
 renderTweets(data);
 
   $('.new-tweet form').submit((event) => {
+    let text = $('#tweet-text').val()
     let str = $('#tweet-text').serialize();
     event.preventDefault();
-    $.ajax({
-      type: 'POST',
-      url: "/tweets",
-      data: str
-      })
-      .then(res => {
-        loadtweets();
-      })
-    })
+    if (text.length > 140) {
+      return alert('The text is tooo loooong')
+    } else if (text === '') {
+      return alert('The text is tooo shooort')
+    } else {
+      return $.ajax({
+        type: 'POST',
+        url: "/tweets",
+        data: str
+        })
+        .then(res => {
+          loadtweets();
+        })
+    }
+  })
   const loadtweets = function () {
     $.ajax({
       type: 'GET',
       url: "/tweets",
     })
     .then(response => {
+      //console.log(response)
       renderTweets(response);
       
     })
+    // .catch((err) => {
+    //   alert(err);
+    // })
   }
 
   loadtweets()
