@@ -1,5 +1,6 @@
 nav {
   padding: 1.5em;
+  border-bottom: 3vw;
   display: flex;
   height: 100px;
   width: 100%;
@@ -8,13 +9,25 @@ nav {
   color: #ffffff;
   background-color: #4056A1;
   justify-content: space-between;
+  font-size: x-large;
 }
 
 .span {
   font-family: 'Bungee', cursive;
 }
-
 nav button {
   background-color: #4056A1;
   border: none;
+}
+
+@media only screen and (max-width: 768px) {
+  nav {
+    background-color: #c6e000;
+    background-image: url("https://www.transparenttextures.com/patterns/light-wool.png");
+    position: relative;
+    font-size: x-large;
+  }
+  nav button {
+    background-color: #c6e000;
+  }
 }

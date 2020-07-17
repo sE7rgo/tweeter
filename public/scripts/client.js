@@ -3,7 +3,6 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-
 const data = [
   {
     "user": {
@@ -43,6 +42,7 @@ const timeDif = function (time) {
   }
   return `${Math.floor(hours)} hours ago`;
 }
+
 const escape =  function(str) {
   let div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
@@ -123,8 +123,6 @@ $(document).ready(() => {
 
   loadtweets()
   $('.create-tweet').click((event) => {
-    // $('.new-tweet').css('border', '3px');
-    // $('.new-tweet').slideDown(1000);
     $('.new-tweet').toggle("slow");
   })
 })

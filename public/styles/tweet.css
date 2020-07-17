@@ -1,15 +1,15 @@
 .tweet {
-  padding: 10px;
-  border: 4px solid grey;
+  padding: 1vw;
+  border: 0.8vw solid grey;
   margin: 50px;
   display: flex;
   flex-direction: column;
   background-color:  #f4f1ec;
-  width: 100%;
+  width: 40vw;
 }
 .tweet:hover {
   color: #302e2b;
-  box-shadow: 10px 10px grey;
+  box-shadow: 1vw 1vw grey;
 }
 .tweet:hover .handle{
   color: #545149;
@@ -18,7 +18,7 @@
   color: transparent;
 }
 .tweet header {
-  height: 130px;
+  height: 5vw;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -30,14 +30,30 @@
 }
 
 .tweet header div img {
-  width: 100px;
   padding-right: 10px;
 }
 .tweet footer {
-  height: 80px;
+  height: 2vw;
   display: flex;
   align-items: center;
   justify-content: space-between;
   border-top: 4px solid gray;
 }
 
+@media only screen and (max-width: 768px) {
+  .tweet {
+    width: 100%;
+    margin: 0;
+    margin-bottom: 3vw;
+    margin-top: 3vw;
+    height: 25vw;
+  }
+
+  .tweet header {
+    height: auto;
+  }
+
+  .tweet footer {
+    padding: 2vw;
+  }
+}
