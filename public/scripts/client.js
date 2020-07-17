@@ -25,6 +25,7 @@ const escape =  function(str) {
 };
 
 const renderTweets = function(tweets) {
+  $( '.tweets-container' ).empty();
   for (const tweet of tweets) {
     $('.tweets-container').prepend(createTweetElement(tweet));
   }
