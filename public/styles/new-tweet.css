@@ -19,6 +19,9 @@ label[for = "tweet-text"] {
 
 button[type = 'submit'] {
   background-color: #4056A1;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  border: none;
 }
 form {
   display: flex;

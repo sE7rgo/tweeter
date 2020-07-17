@@ -40,7 +40,9 @@
   border-top: 4px solid gray;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen 
+and (min-width: 764px) 
+and (max-width: 1024px) {
   .tweet {
     width: 100%;
     margin: 0;
@@ -55,5 +57,6 @@
 
   .tweet footer {
     padding: 2vw;
+    height: auto;
   }
 }
