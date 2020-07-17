@@ -3,8 +3,8 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-const timeDif = function (time) {
-  const diff = (Date.parse(new Date) - time)
+const timeDif = function(time) {
+  const diff = (Date.parse(new Date) - time);
   const sec = diff / 1000;
   const min = sec / 60;
   const hours = (min / 60);
@@ -16,15 +16,16 @@ const timeDif = function (time) {
     return `${days} days ago`;
   }
   return `${Math.floor(hours)} hours ago`;
-}
+};
 
 const escape =  function(str) {
   let div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
-}
+};
+
 const renderTweets = function(tweets) {
-  for (const tweet =  of tweets) {
+  for (const tweet of tweets) {
     $('.tweets-container').prepend(createTweetElement(tweet));
   }
 };
@@ -51,9 +52,9 @@ const createTweetElement = function(data) {
       🍺☺️👾 🤖
     </div>
   </footer>
-</article>`
-return $tweet;
-}
+</article>`;
+  return $tweet;
+};
 $(document).ready(() => {
 
   $('.new-tweet form').submit((event) => {
@@ -74,24 +75,25 @@ $(document).ready(() => {
         type: 'POST',
         url: "/tweets",
         data: str
-        })
-        .then(res => {
+      })
+        .then(() => {
           loadtweets();
-        })
+        });
     }
-  })
-  const loadtweets = function () {
+  });
+  const loadtweets = function() {
     $.ajax({
       type: 'GET',
       url: "/tweets",
     })
-    .then(response => {
-      renderTweets(response);
-    })
-  }
+      .then(response => {
+        renderTweets(response);
+      });
+  };
+  
+  loadtweets();
 
-  loadtweets()
-  $('.create-tweet').click((event) => {
+  $('.create-tweet').click(() => {
     $('.new-tweet').toggle("slow");
-  })
-})
+  });
+});
