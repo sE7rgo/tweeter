@@ -1,8 +1,4 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
+/* find time time difference */
 const timeDif = function(time) {
   const diff = (Date.parse(new Date) - time);
   const sec = diff / 1000;
@@ -17,7 +13,7 @@ const timeDif = function(time) {
   }
   return `${Math.floor(hours)} hours ago`;
 };
-
+/* render insecure text: */
 const escape =  function(str) {
   let div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
@@ -61,7 +57,9 @@ $(document).ready(() => {
   $('.new-tweet form').submit((event) => {
     let text = $('#tweet-text').val();
     let str = $('#tweet-text').serialize();
+    /* prevent reload */
     event.preventDefault();
+    /* handle errors */
     if (text.length > 140) {
       $('.error').text(`❌ Look's like you are Tolstoy, try with 140 characters 😀`);
       $('.error').css('border', '3px solid red');
