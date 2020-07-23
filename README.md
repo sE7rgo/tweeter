@@ -10,6 +10,13 @@ Tweeter is a simple, single-page Twitter clone.
   !["Some error"](https://github.com/sE7rgo/tweeter/blob/master/img/error.png)
   !["Tablet version"](https://github.com/sE7rgo/tweeter/blob/master/img/tablet_size.png)
 
+## Getting Started
+
+Fork this repository, then clone your fork of this repository.
+Install dependencies using the npm install command.
+Start the web server using the npm run local command. The app will be served at http://localhost:8080/.
+Go to http://localhost:8080/ in your browser.
+
 
 ## Dependencies
 
