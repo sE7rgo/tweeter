@@ -2,8 +2,8 @@
 
 Tweeter is a simple, single-page Twitter clone.
 
-  Small and nice project with some elements of humor :)
-  JS, HTML, CSS, jQuery, AJAX, beer and some tiny animation were involved.
+  - Small and nice project with some elements of humor :)
+  - JS, HTML, CSS, jQuery, AJAX, beer and some tiny animation were involved.
 
   
 
